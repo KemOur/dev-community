@@ -17,6 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/profil', function () {
+    return view('profil');
+})->middleware(['auth'])->name('profil');
+
+require __DIR__.'/auth.php';
