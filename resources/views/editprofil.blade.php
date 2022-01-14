@@ -90,6 +90,25 @@
                                 @endif
                             </div>
 
+                            <!-- Password -->
+                            <div class="mt-4">
+                                <x-label for="password" :value="__('New password&')" />
+
+                                <x-input id="password" class="block mt-1 w-full"
+                                         type="password"
+                                         name="password"
+                                         autocomplete="new-password" />
+                            </div>
+
+                            <!-- Confirm Password -->
+                            <div class="mt-4">
+                                <x-label for="password_confirmation" :value="__('Confirm Password')" />
+
+                                <x-input id="password_confirmation" class="block mt-1 w-full"
+                                         type="password"
+                                         name="password_confirmation" />
+                            </div>
+
                             <div class="mt-5 text-right md:space-x-3 md:block flex flex-col-reverse">
                                 <button class="mb-2 md:mb-0 bg-white px-5 py-2 text-sm shadow-sm font-medium tracking-wider border text-gray-600 rounded-full hover:shadow-lg hover:bg-gray-100"> Cancel </button>
                                 <button class="mb-2 md:mb-0 bg-green-400 px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-white rounded-full hover:shadow-lg hover:bg-green-500" type="submit">Valider</button>

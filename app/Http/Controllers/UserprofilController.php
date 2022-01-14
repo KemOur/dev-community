@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
 class UserprofilController extends Controller
@@ -72,12 +74,20 @@ class UserprofilController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+
+        //dd($request->request);
+
         $request->validate([
             'name' => 'required|string|max:255',
-            'bio' => 'required',
             'email' => 'required',
             'photo' => '|mimes:jpg,png,jpeg|max:5048',
         ]);
+
+        //VALIDATE PASSWORD = CONFIRM PASSWORD
+
+        //VALIDATE EMAIL EXISTE DEJA OU PAS
+
 
         if (!$request->photo)
         {
@@ -88,7 +98,12 @@ class UserprofilController extends Controller
                 'email' => $request->input('email'),
             ]);
 
-            return redirect()->route('profil', $user)->withMessage('Votre profil à été mis à jour');
+            User::where('id', Auth::user()->id)->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password)
+            ]);
+            return redirect()->route('profil')->withMessage('Votre profil à été mis à jour');
         }
 
         $newImageName  = time() . '-' . $request->name . '.' .
@@ -100,8 +115,12 @@ class UserprofilController extends Controller
             'name' => $request->input('name'),
             'bio' => $request->input('bio'),
             'email' => $request->input('email'),
-            'photo' => $newImageName
+            'photo' => $newImageName,
+            'password' => $request->input('password')
+
         ]);
+
+
 
         return redirect()->route('profil', $user)->withMessage('Votre profil à été mis à jour');
     }
