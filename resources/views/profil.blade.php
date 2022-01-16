@@ -5,6 +5,12 @@
         </h2>
     </x-slot>
 
+    @if(session('success'))
+        <ul>
+            <li style="background-color: mediumseagreen; color: white; text-align: center"><small>{{ session('success') }}</small></li>
+        </ul>
+    @endif
+
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="m-10 mx-auto p-16 sm:p-24 lg:p-48 bg-200">

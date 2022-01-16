@@ -17,8 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () { return view('dashboard'); })->middleware(['auth'])->name('dashboard');
+//Route::get('/dashboard', function () { return view('dashboard'); })->middleware(['auth'])->name('dashboard');
 Route::get('/profil', function () { return view('profil'); })->middleware(['auth'])->name('profil');
+Route::get('/dashboard', [\App\Http\Controllers\HomeController::class, 'dashboard' ]) ->name('dashboard')->middleware(['auth']);
+
+Route::post('/posts',  [\App\Http\Controllers\PostsController::class, 'store' ])->name('posts');
 
 Route::get('/edit/{id}', [\App\Http\Controllers\UserprofilController::class, 'edit' ]) ->name('editprofil')->middleware(['auth']);
 Route::put('/edit/{id}', [\App\Http\Controllers\UserprofilController::class, 'update' ]) ->name('update');

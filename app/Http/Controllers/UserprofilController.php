@@ -74,8 +74,6 @@ class UserprofilController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-
         //dd($request->request);
 
         $request->validate([
@@ -101,7 +99,6 @@ class UserprofilController extends Controller
             User::where('id', Auth::user()->id)->update([
                 'name' => $request->name,
                 'email' => $request->email,
-                'password' => Hash::make($request->password)
             ]);
             return redirect()->route('profil')->withMessage('Votre profil à été mis à jour');
         }
@@ -116,12 +113,25 @@ class UserprofilController extends Controller
             'bio' => $request->input('bio'),
             'email' => $request->input('email'),
             'photo' => $newImageName,
-            'password' => $request->input('password')
-
         ]);
-
-
-
+        /*
+            if($request->password){
+                $user->update([
+                    'name' => $request->input('name'),
+                    'bio' => $request->input('bio'),
+                    'email' => $request->input('email'),
+                    'photo' => $newImageName,
+                    'password' => $request->input('password')
+                ]);
+            }else{
+                $user->update([
+                    'name' => $request->input('name'),
+                    'bio' => $request->input('bio'),
+                    'email' => $request->input('email'),
+                    'photo' => $newImageName,
+                ]);
+            }
+        */
         return redirect()->route('profil', $user)->withMessage('Votre profil à été mis à jour');
     }
 

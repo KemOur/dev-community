@@ -43,4 +43,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function timeline()
+    {
+        return Post::where('user_id', $this->id)
+            ->withLikes()
+            ->latest()->get();
+    }
 }
