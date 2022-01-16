@@ -9,13 +9,34 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <!-- component -->
             <div class="font-sans">
-                <div class="bg-white max-w-md mx-auto my-8 border border-grey-light rounded-t-lg overflow-hidden">
+                <div class="bg-white max-w-md mx-auto my-3 border border-grey-light rounded-t-lg overflow-hidden">
+
                     <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div class="p-6 bg-white border-b border-gray-200">
-                            You're logged in!
+                            Quoi de neuf ?
                         </div>
                     </div>
                     <br>
+
+                    <div class="bg-grey-lighter p-4 pl-8">
+                        <textarea class="w-full border border-blue rounded"></textarea>
+                        <div class="flex justify-between items-center mt-2">
+                            <button class="p-2 text-blue leading-none rounded border border-transparent hover:border-blue">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                     class="feather feather-image">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21 15 16 10 5 21"></polyline>
+                                </svg>
+                            </button>
+                            <button class="py-2 px-4 bg-white border border-blue rounded rounded-full
+          hover:bg-blue hover:text-white">
+                                Reply
+                            </button>
+                        </div>
+                    </div>
+
                     <div class="flex flex-wrap no-underline text-black h-64 overflow-hidden">
                         <div class="w-3/4 h-full">
                             <img class="block pr-px w-full h-full" src="https://pbs.twimg.com/media/DRKabGUW0AA4yzH.jpg:large" alt=""
@@ -32,6 +53,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="flex pt-4 px-4">
                         <div class="w-16 mr-2">
                             <img class="p-2 rounded rounded-full"
@@ -78,6 +100,7 @@
                             </footer>
                         </div>
                     </div>
+
                 </div>
                 <div class="bg-white max-w-md mx-auto my-8 border border-grey-light">
                     <div class="flex pt-4 px-4">
@@ -219,6 +242,7 @@
                             </footer>
                         </div>
                     </div>
+
                     <div class="bg-grey-lighter p-4 pl-8">
                         <textarea class="w-full border border-blue rounded"></textarea>
                         <div class="flex justify-between items-center mt-2">
@@ -237,6 +261,7 @@
                             </button>
                         </div>
                     </div>
+
                 </div>
                 <div class="bg-white max-w-md mx-auto my-8 border border-grey-light">
                     <div class="flex pt-4 px-4">

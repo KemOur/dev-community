@@ -56,6 +56,9 @@
                 }
             }
 
+            .max-w-md {
+                max-width: 38rem;
+            }
         </style>
     </head>
     <body class="font-sans antialiased">
