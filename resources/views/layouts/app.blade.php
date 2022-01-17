@@ -39,6 +39,7 @@
             <meta name="twitter:title" content="Timeline by rswebdesigner">
             <meta name="twitter:description" content="Timeline inspired by Facebook &amp; Twitter.">
             <meta name="twitter:image" content="https://tailwindcomponents.com/storage/835/temp38896.png?v=2022-01-14 08:48:07">
+            <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
             <title>Timeline by rswebdesigner. </title>
 
