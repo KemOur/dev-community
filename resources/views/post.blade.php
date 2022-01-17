@@ -3,7 +3,7 @@
     <div class="w-16 mr-2">
         <img
              class="p-2 rounded rounded-full"
-             src="https://scontent-frt3-1.cdninstagram.com/t51.2885-19/s150x150/22638783_1031626323645160_6412994168498421760_n.jpg">
+             src=" {{ url("imgs/".$post->user->photo) }}">
     </div>
     <div class="px-2 pt-2 flex-grow">
         <header>
@@ -39,11 +39,11 @@
                      stroke-linejoin="round"
                      class="feather feather-thumbs-up h-6 w-6 mr-1 stroke-current">
                     <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
-                    <span>{{ $post->likes ?: 0}}</span>
+                    <span>{{ $post->liked ? : 0}}</span>
                 </svg>
             </a>
 
-            <a href="#" class="block no-underline text-blue flex px-4 py-2 items-center hover:bg-grey-lighter">
+            <a href="#" class="{{-- $post -> isDislikedBy( Auth::user()) ? 'text-blue-500' : 'text-gray-500' --}} block no-underline text-blue flex px-4 py-2 items-center hover:bg-grey-lighter">
                 <svg xmlns="http://www.w3.org/2000/svg"
                      width="24"
                      height="24"
@@ -55,7 +55,7 @@
                      stroke-linejoin="round"
                      class="feather feather-thumbs-down">
                     <path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"/></svg>
-                <span>{{ $post->dislikes ?: 0}}</span>
+                <span>{{ $post->dislikes ? : 0}}</span>
 
             </a>
 

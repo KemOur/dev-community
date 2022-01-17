@@ -12,6 +12,7 @@ class Post extends Model
 
     protected $fillable = [
         'user_id',
+        'post_id',
         'body'
     ];
 
@@ -42,6 +43,7 @@ class Post extends Model
             ->where('liked', true)
             ->count();
     }
+
 
     public function isDislikedBy(User $user)
     {
