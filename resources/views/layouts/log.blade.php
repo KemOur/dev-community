@@ -34,6 +34,8 @@
     <title>Auth, Login, Register Form by EgoistDeveloper. </title>
 
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
 </head>
 <body>
 
