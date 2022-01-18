@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/mentions', function () {
+    return view('mentions');
+});
+
 //Route::get('/dashboard', function () { return view('dashboard'); })->middleware(['auth'])->name('dashboard');
 Route::get('/profil', function () { return view('profil'); })->middleware(['auth'])->name('profil');
 Route::get('/dashboard', [\App\Http\Controllers\HomeController::class, 'dashboard' ]) ->name('dashboard')->middleware(['auth']);
